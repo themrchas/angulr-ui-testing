@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/helloworld.js"></script>
+    <script src="js/hellogalaxy.js"></script>
+    <script src="js/dataService.js"></script>
+
+    <style>.active { color: red; font-weight: bold; }</style>
+  </head>
+
+  <body ng-app="helloworld">
+    <a ui-sref="hello" ui-sref-active="active">Hello</a>
+    <a ui-sref="about" ui-sref-active="active">About</a>
+    <a ui-sref="solar" ui-sref-active="active">Solar System</a>
+    
+    <ui-view></ui-view>
+  </body>
+</html>
