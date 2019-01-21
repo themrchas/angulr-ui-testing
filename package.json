@@ -1,0 +1,8 @@
+{
+    "devDependencies": {
+        "@uirouter/angularjs": "^1.0.21",
+        "angular": "^1.7.6",
+        "gulp": "^3.9.1",
+        "gulp-clean": "^0.4.0"
+    }
+}
