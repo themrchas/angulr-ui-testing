@@ -21,14 +21,16 @@ angular.module('test.hellogalaxy',[])
 
   .component('solarSystemWParams', {
 
-  bindings:{ planetName:'<'},
+  bindings:{ planet:'<'},
 
     template: '<h3>{{$ctrl.greeting}} Solar System!</h3>' +
-'<h3>Your passed param is {{$ctrl.planetName}}</h3>' +
-'<a ui-sref="solarWParams({planetName:mars})">' +
+'<h3>Your passed param is {{$ctrl.planet}}</h3>' +
+'<a ui-sref="solarWParams({testName:$ctrl.ctrlPlanet})">mars</a>' +
   '<button ng-click="$ctrl.toggleGreeting()">toggle greeting</button>',
 
     controller: function () {
+
+        this.ctrlPlanet = "jupiter";
         this.greeting = 'hello';
 
         this.toggleGreeting = function () {

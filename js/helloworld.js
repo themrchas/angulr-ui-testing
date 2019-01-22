@@ -31,11 +31,11 @@ myApp.config(function($stateProvider) {
 
   var solarWithParams = {
     name: 'solarWParams',
-    url: '/solarp/{planetName}',
+    url: '/solarp/{testName}',
     component: 'solarSystemWParams',
    resolve: {
       planet: function($transition$) {
-        return $transition$.params().planetName;
+        return $transition$.params().testName;
       }
     } 
   }
