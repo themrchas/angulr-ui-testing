@@ -28,7 +28,24 @@ myApp.config(function($stateProvider) {
     }
   }
 
+
+  var solarWithParams = {
+    name: 'solarWParams',
+    url: '/solarp/{planetName}',
+    component: 'solarSystemWParams',
+   resolve: {
+      planet: function($transition$) {
+        return $transition$.params().planetName;
+      }
+    } 
+  }
+
+  
+
+
   $stateProvider.state(helloState);
   $stateProvider.state(aboutState);
   $stateProvider.state(helloSolar);
+  $stateProvider.state(solarWithParams);
+
 });
