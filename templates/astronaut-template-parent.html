@@ -1,0 +1,10 @@
+<div>
+    astronautInfo is {{$ctrl.astronautInfo}}
+    <ul>
+        <li ng-repeat="person in $ctrl.astronautInfo">
+            <a ui-sref-active="active" ui-sref="astronauts.detail({id: person.id})">{{person.name}}</a>
+        </li>
+    </ul>
+
+    <ui-view></ui-view>
+</div>

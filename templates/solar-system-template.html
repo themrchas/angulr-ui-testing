@@ -1,0 +1,10 @@
+<h3>{{$ctrl.greeting}} Solar System!</h3>
+    
+
+    <li ng-repeat="planet in $ctrl.ctrlPlanets">
+            <a ui-sref="solarWParams({testName:planet})">{{planet}}</a>
+        </li>
+
+
+     <!--   <a ui-sref="solarWParams({testName:$ctrl.ctrlPlanet})">{{$ctrl.ctrlPlanets}}</a> -->
+<button ng-click="$ctrl.toggleGreeting()">toggle greeting</button>

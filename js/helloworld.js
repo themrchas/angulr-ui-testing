@@ -40,6 +40,32 @@ myApp.config(function($stateProvider) {
     } 
   }
 
+
+  var astronautsState = {
+    name: 'astronauts',
+    url: '/astronauts',
+    component: 'compAstronauts',
+   resolve: {
+      astronautInfo: function(dataService) {
+        return dataService.getAstronautInfo();
+      }
+    } 
+  }
+
+  var astronautDetailState = {
+    name: 'astronauts.detail',
+    url: '/{id}',
+    component: 'compAstronautDetail',
+   resolve: {
+      astronautDetail: function(dataService,astronautInfo,$stateParams) {
+        
+        return dataService.getAstronautDetail(astronautInfo,$stateParams.id);
+      }
+    } 
+  }
+
+
+
   
 
 
@@ -47,5 +73,16 @@ myApp.config(function($stateProvider) {
   $stateProvider.state(aboutState);
   $stateProvider.state(helloSolar);
   $stateProvider.state(solarWithParams);
+  $stateProvider.state(astronautsState);
+  $stateProvider.state(astronautDetailState);
+
+
 
 });
+
+
+myApp.controller('appCtrl',['$scope',function($scope) {
+
+  $scope.planets = ["mars","jupiter","mercury"];
+
+}]);

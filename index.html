@@ -9,10 +9,17 @@
     <style>.active { color: red; font-weight: bold; }</style>
   </head>
 
-  <body ng-app="helloworld">
+  <body ng-app="helloworld" ng-controller="appCtrl">
     <a ui-sref="hello" ui-sref-active="active">Hello</a>
     <a ui-sref="about" ui-sref-active="active">About</a>
     <a ui-sref="solar" ui-sref-active="active">Solar System</a>
+    <a ui-sref="astronauts" ui-sref-active="active">Astronauts</a>
+
+    <!--<li ng-repeat="planet in planets">
+        <a ui-sref="solarWParams({testName:planet})">{{planet}}</a>
+    </li>
+  -->
+
     
     
     <ui-view></ui-view>
