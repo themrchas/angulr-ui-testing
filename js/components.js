@@ -4,18 +4,11 @@ angular.module('test.hellogalaxy',[])
 
         bindings:{ planets:'<', rockyPlanets:'<'},
 
-      /*  template: '<h3>{{$ctrl.greeting}} Solar System!</h3>' +
-    '<h3>planets are {{$ctrl.planets}}</h3>' +
-    '<h3>rocky planets are {{$ctrl.rockyPlanets}}</h3>' +
-            '<button ng-click="$ctrl.toggleGreeting()">toggle greeting</button>',
-*/
         templateUrl: 'templates/solar-system-template.html',
 
         controller: function () {
 
             this.ctrlPlanets = ["mars","jupiter","mercury"];
-
-            this.greeting = 'hello';
 
             this.toggleGreeting = function () {
                 this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
@@ -24,7 +17,7 @@ angular.module('test.hellogalaxy',[])
   })
 
 
-  .component('solarSystemWParams', {
+  .component('solarparams', {
 
   bindings:{ planet:'<'},
 

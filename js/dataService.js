@@ -24,7 +24,7 @@ function getRockyPlanets() {
     var intervalID = setInterval(function() {
 
         clearInterval(intervalID);
-        deferred.resolve(['Mercury','Venus']);
+        deferred.resolve(['Mercury','Venus', 'Earth']);
 
     }, 6000)
 

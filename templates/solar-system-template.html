@@ -1,10 +1,15 @@
-<h3>{{$ctrl.greeting}} Solar System!</h3>
-    
-
+  <ul>
     <li ng-repeat="planet in $ctrl.ctrlPlanets">
-            <a ui-sref="solarWParams({testName:planet})">{{planet}}</a>
+            <a ui-sref="solarparams({testName:planet})">{{planet}}</a>
         </li>
+ </ul>
 
+<h3>Fetched rocky planets are below...</h3>
+ <ul>
+    <li ng-repeat="rockyPlanet in $ctrl.rockyPlanets">
+        {{rockyPlanet}}
+    </li>
+ </ul>
 
      <!--   <a ui-sref="solarWParams({testName:$ctrl.ctrlPlanet})">{{$ctrl.ctrlPlanets}}</a> -->
 <button ng-click="$ctrl.toggleGreeting()">toggle greeting</button>

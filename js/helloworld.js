@@ -14,6 +14,7 @@ myApp.config(function($stateProvider) {
     template: '<h3>Its the UI-Router hello world app!</h3>'
   }
 
+  //Demonstrates multiple resolves
   var helloSolar = {
     name: 'solar',
     url: '/solar',
@@ -29,13 +30,14 @@ myApp.config(function($stateProvider) {
   }
 
 
+//Shows how to pass parameters
   var solarWithParams = {
-    name: 'solarWParams',
-    url: '/solarp/{testName}',
-    component: 'solarSystemWParams',
+    name: 'solarparams',
+    url: '/solarparams/{testName}',
+    component: 'solarparams',
    resolve: {
       planet: function($transition$) {
-        return $transition$.params().testName;
+         return $transition$.params().testName;
       }
     } 
   }
@@ -52,6 +54,8 @@ myApp.config(function($stateProvider) {
     } 
   }
 
+
+  //Child state of 'astronauts' state
   var astronautDetailState = {
     name: 'astronauts.detail',
     url: '/{id}',
