@@ -73,3 +73,60 @@ angular.module('test.hellogalaxy',[])
       }
 
 })
+
+
+.component('compLeagues', {
+
+    bindings:{ leagueInfo:'<'},
+  
+      templateUrl: 'templates/league-detail-template.html',
+  
+      controller: function () {
+  
+        //  this.planets = ["mars","jupiter","mercury"];
+        //  this.greeting = 'hello';
+  
+        //  this.toggleGreeting = function () {
+        //      this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
+         // }
+      }
+
+})
+
+
+.component('compTeams', {
+
+    bindings:{ teamInfo:'<'},
+  
+      templateUrl: 'templates/team-detail-template.html',
+  
+      controller: function () {
+  
+        //  this.planets = ["mars","jupiter","mercury"];
+        //  this.greeting = 'hello';
+  
+        //  this.toggleGreeting = function () {
+        //      this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
+         // }
+      }
+
+})
+
+
+.component('compBaseball', {
+
+   // bindings:{ teamInfo:'<'},
+  
+      templateUrl: 'templates/baseball-template.html',
+  
+      controller: function () {
+  
+        //  this.planets = ["mars","jupiter","mercury"];
+        //  this.greeting = 'hello';
+  
+        //  this.toggleGreeting = function () {
+        //      this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
+         // }
+      }
+
+})

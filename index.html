@@ -13,11 +13,20 @@
     <a ui-sref="hello" ui-sref-active="active">Hello</a>
     <a ui-sref="about" ui-sref-active="active">About</a>
 
-    <!-- Demonstrates using multiple resolves -->
+    <!-- Demonstrates using multiple resolves and passing params -->
     <a ui-sref="solar" ui-sref-active="active">Solar System</a>
 
-
+    <!--Demonstartes using parent - child states -->
     <a ui-sref="astronauts" ui-sref-active="active">Astronauts</a>
+
+    <!--Demonstrates a child state wihtout url -->
+    <a ui-sref="baseballParent" ui-sref-active="active">Baseball Parent</a>
+
+
+ <a ui-sref="my.messages" ui-sref-active="active">My</a>
+
+
+
 
     <!--<li ng-repeat="planet in planets">
         <a ui-sref="solarWParams({testName:planet})">{{planet}}</a>

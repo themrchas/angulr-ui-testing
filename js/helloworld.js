@@ -68,6 +68,117 @@ myApp.config(function($stateProvider) {
     } 
   }
 
+ 
+   //Child state of 'parent' state
+   /*var astronautDetailState = {
+    name: 'parent.detail',
+    url: '/{id}',
+    component: 'compAstronautDetail',
+   resolve: {
+      astronautDetail: function(dataService,astronautInfo,$stateParams) {
+        
+        return dataService.getAstronautDetail(astronautInfo,$stateParams.id);
+      }
+    } 
+  }
+*/
+
+  var baseballTeams = {
+    name: 'teams',
+   // url: '/parent',
+    component: 'compTeams',
+/*   resolve: {
+      teamInfo: function(dataService) {
+        return dataService.getTeams();
+      }
+    } */
+  }
+
+  /*
+  var baseballLeagues = {
+    name: 'leagues',
+  //  url: '/parent',
+    component: 'compLeagues',
+   resolve: {
+      leagueInfo: function(dataService) {
+        return dataService.getLeagues();
+      }
+    } 
+  }
+  */
+
+  var myAbstract = {
+    name: 'my',
+    abstract: true,
+    url: '/my',
+    templateUrl: 'templates/baseball-template.html'
+
+ /*   views: {
+      leagues: 'compLeagues',
+      teams : 'compTeams',
+      '' : 'compBaseball'
+    } */
+  }
+
+
+  var messagesAbstract = {
+   // abstract:true,
+    name: 'my.messages',
+     url: '/messages',
+
+      views: {
+
+      leagues: 'compLeagues',
+     teams : 'compTeams'
+    },
+    resolve: {
+      leagueInfo: function(dataService) {
+        return dataService.getLeagues();
+      },
+      teamInfo: function(dataService) {
+        return dataService.getTeams();
+      }
+    }
+     
+  }
+
+ 
+
+
+  /*
+  var new = {
+    
+    name: 'my.messages.new',
+     url: '/new',
+
+      views: {
+
+      leagues: 'compLeagues',
+      teams : 'compTeams',
+    } 
+ 
+  }
+
+*/
+
+
+var baseballParent = {
+ //   abstract: true,
+    name: 'baseballParent',
+  //  url: '/parent',
+  //  component: 'compBaseball',
+    templateUrl: 'templates/baseball-template.html',
+   /* resolve: {
+      leagueInfo: function(dataService) {
+        return dataService.getLeagues();
+      }
+    }  */
+
+    /*views: {
+      leagues: 'compLeagues',
+      teams : 'compTeams'
+    } */
+  }
 
 
   
@@ -80,6 +191,16 @@ myApp.config(function($stateProvider) {
   $stateProvider.state(astronautsState);
   $stateProvider.state(astronautDetailState);
 
+
+  /*
+  $stateProvider.state(baseballTeams);
+  $stateProvider.state(baseballLeagues);
+  $stateProvider.state(baseballParent);
+  $stateProvider.state(parentAbstract);
+*/
+
+$stateProvider.state(myAbstract);
+  $stateProvider.state(messagesAbstract);
 
 
 });

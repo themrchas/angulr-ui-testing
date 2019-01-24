@@ -61,11 +61,47 @@ function getAstronautDetail(astronautInfo,id) {
 }
 
 
+function getLeagues() {
+
+    var leagues = ["American", "National"];
+
+        var deferred = $q.defer();
+
+        var intervalID = setInterval(function () {
+
+            clearInterval(intervalID);
+            deferred.resolve(leagues);
+
+        }, 3000)
+
+        return deferred.promise;
+}
+
+function getTeams() {
+
+    var leagues = ["NY Yankees", "Los Angeles Dodgers", "Boston Red Sox", "Philadelphia Phillies"];
+
+        var deferred = $q.defer();
+
+        var intervalID = setInterval(function () {
+
+            clearInterval(intervalID);
+            deferred.resolve(leagues);
+
+        }, 3000)
+
+        return deferred.promise;
+}
+
+
+
 return {
     getPlanets:getPlanets,
     getRockyPlanets: getRockyPlanets,
     getAstronautInfo:getAstronautInfo,
-    getAstronautDetail:getAstronautDetail
+    getAstronautDetail:getAstronautDetail,
+    getLeagues:getLeagues,
+    getTeams:getTeams
 }
 
 }]);
