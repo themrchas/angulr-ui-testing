@@ -94,6 +94,40 @@ function getTeams() {
 }
 
 
+function getFootballConferences() {
+
+    var leagues = ["American", "National"];
+
+        var deferred = $q.defer();
+
+        var intervalID = setInterval(function () {
+
+            clearInterval(intervalID);
+            deferred.resolve(leagues);
+
+        }, 3000)
+
+        return deferred.promise;
+}
+
+
+function getFootballTeams() {
+
+    var leagues = ["Miami Dolphins", "Jacksonville Jaguars", "New England Patriots", "Oakland Raiders"];
+
+        var deferred = $q.defer();
+
+        var intervalID = setInterval(function () {
+
+            clearInterval(intervalID);
+            deferred.resolve(leagues);
+
+        }, 3000)
+
+        return deferred.promise;
+}
+
+
 
 return {
     getPlanets:getPlanets,
@@ -101,7 +135,10 @@ return {
     getAstronautInfo:getAstronautInfo,
     getAstronautDetail:getAstronautDetail,
     getLeagues:getLeagues,
-    getTeams:getTeams
+    getTeams:getTeams,
+    getFootballTeams:getFootballTeams,
+    getFootballConferences:getFootballConferences
+
 }
 
 }]);

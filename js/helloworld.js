@@ -69,43 +69,6 @@ myApp.config(function($stateProvider) {
   }
 
  
-   //Child state of 'parent' state
-   /*var astronautDetailState = {
-    name: 'parent.detail',
-    url: '/{id}',
-    component: 'compAstronautDetail',
-   resolve: {
-      astronautDetail: function(dataService,astronautInfo,$stateParams) {
-        
-        return dataService.getAstronautDetail(astronautInfo,$stateParams.id);
-      }
-    } 
-  }
-*/
-
-  var baseballTeams = {
-    name: 'teams',
-   // url: '/parent',
-    component: 'compTeams',
-/*   resolve: {
-      teamInfo: function(dataService) {
-        return dataService.getTeams();
-      }
-    } */
-  }
-
-  /*
-  var baseballLeagues = {
-    name: 'leagues',
-  //  url: '/parent',
-    component: 'compLeagues',
-   resolve: {
-      leagueInfo: function(dataService) {
-        return dataService.getLeagues();
-      }
-    } 
-  }
-  */
 
   var myAbstract = {
     name: 'my',
@@ -113,74 +76,60 @@ myApp.config(function($stateProvider) {
     url: '/my',
     templateUrl: 'templates/baseball-template.html'
 
- /*   views: {
-      leagues: 'compLeagues',
-      teams : 'compTeams',
-      '' : 'compBaseball'
-    } */
   }
 
 
   var messagesAbstract = {
-   // abstract:true,
-    name: 'my.messages',
-     url: '/messages',
 
-      views: {
+    name: 'my.messages',
+    url: '/messages',
+
+    views: {
 
       leagues: 'compLeagues',
-     teams : 'compTeams'
+      teams: 'compTeams'
     },
     resolve: {
-      leagueInfo: function(dataService) {
+      leagueInfo: function (dataService) {
         return dataService.getLeagues();
       },
-      teamInfo: function(dataService) {
+      teamInfo: function (dataService) {
         return dataService.getTeams();
       }
     }
-     
+
   }
 
- 
 
+  var footballAbstract = {
+    name: 'football',
+    abstract: true,
+    url: '/football',
+    templateUrl: 'templates/football-template.html'
 
-  /*
-  var new = {
-    
-    name: 'my.messages.new',
-     url: '/new',
-
-      views: {
-
-      leagues: 'compLeagues',
-      teams : 'compTeams',
-    } 
- 
   }
 
-*/
 
+var footballInformation = {
 
-var baseballParent = {
- //   abstract: true,
-    name: 'baseballParent',
-  //  url: '/parent',
-  //  component: 'compBaseball',
-    templateUrl: 'templates/baseball-template.html',
-   /* resolve: {
-      leagueInfo: function(dataService) {
-        return dataService.getLeagues();
+    name: 'football.information',
+    url: '/information',
+
+    views: {
+
+      conferences: 'compFootballLeagues',
+      teams: 'compFootballTeams'
+    },
+    resolve: {
+      leagueInfo: function (dataService) {
+        return dataService.getFootballConferences();
+      },
+      teamInfo: function (dataService) {
+        return dataService.getFootballTeams();
       }
-    }  */
+    }
 
-    /*views: {
-      leagues: 'compLeagues',
-      teams : 'compTeams'
-    } */
   }
-
-
   
 
 
@@ -200,7 +149,11 @@ var baseballParent = {
 */
 
 $stateProvider.state(myAbstract);
-  $stateProvider.state(messagesAbstract);
+$stateProvider.state(messagesAbstract);
+
+
+$stateProvider.state(footballAbstract);
+$stateProvider.state(footballInformation);
 
 
 });

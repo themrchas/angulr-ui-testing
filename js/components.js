@@ -130,3 +130,40 @@ angular.module('test.hellogalaxy',[])
       }
 
 })
+
+
+.component('compFootballLeagues', {
+
+    bindings:{ leagueInfo:'<'},
+  
+      templateUrl: 'templates/football-league-detail-template.html',
+  
+      controller: function () {
+  
+        //  this.planets = ["mars","jupiter","mercury"];
+        //  this.greeting = 'hello';
+  
+        //  this.toggleGreeting = function () {
+        //      this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
+         // }
+      }
+
+})
+
+.component('compFootballTeams', {
+
+    bindings:{ teamInfo:'<'},
+  
+      templateUrl: 'templates/football-team-detail-template.html',
+  
+      controller: function () {
+  
+        //  this.planets = ["mars","jupiter","mercury"];
+        //  this.greeting = 'hello';
+  
+        //  this.toggleGreeting = function () {
+        //      this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
+         // }
+      }
+
+})
