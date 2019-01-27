@@ -1,4 +1,13 @@
+<div style="border: solid red 2px">
+
+football-team-detail-template.html
+
 <li ng-repeat="team in $ctrl.teamInfo">
         <!--    <a ui-sref="solarWParams({testName:planet})">{{planet}}</a> -->
         {{team}}
         </li>
+        <div>empty ui-view follows in football-team-detail-template
+       <ui-view></ui-view>
+</div>     
+
+</div>

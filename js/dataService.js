@@ -111,9 +111,41 @@ function getFootballConferences() {
 }
 
 
-function getFootballTeams() {
+function getNationalFootballTeams() {
+
+    var leagues = ["Dallas Cowboys", "Washington Redskins", "Green Bay Packers", "Philadelphia Eagles"];
+
+        var deferred = $q.defer();
+
+        var intervalID = setInterval(function () {
+
+            clearInterval(intervalID);
+            deferred.resolve(leagues);
+
+        }, 3000)
+
+        return deferred.promise;
+}
+
+function getAmericanFootballTeams() {
 
     var leagues = ["Miami Dolphins", "Jacksonville Jaguars", "New England Patriots", "Oakland Raiders"];
+
+        var deferred = $q.defer();
+
+        var intervalID = setInterval(function () {
+
+            clearInterval(intervalID);
+            deferred.resolve(leagues);
+
+        }, 3000)
+
+        return deferred.promise;
+}
+
+function getTerribleFootballTeams() {
+
+    var leagues = ["NY Jets", "Oakland Raiders", "Buffalo Bills", "NY Giants"];
 
         var deferred = $q.defer();
 
@@ -136,8 +168,12 @@ return {
     getAstronautDetail:getAstronautDetail,
     getLeagues:getLeagues,
     getTeams:getTeams,
-    getFootballTeams:getFootballTeams,
-    getFootballConferences:getFootballConferences
+   // getFootballTeams:getFootballTeams,
+    getFootballConferences:getFootballConferences,
+    getNationalFootballTeams:getNationalFootballTeams,
+    getAmericanFootballTeams:getAmericanFootballTeams,
+    getTerribleFootballTeams:getTerribleFootballTeams
+
 
 }
 

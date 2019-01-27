@@ -132,11 +132,11 @@ angular.module('test.hellogalaxy',[])
 })
 
 
-.component('compFootballLeagues', {
+.component('compFootballConferences', {
 
-    bindings:{ leagueInfo:'<'},
+    bindings:{ conferenceInfo:'<'},
   
-      templateUrl: 'templates/football-league-detail-template.html',
+      templateUrl: 'templates/football-conference-detail-template.html',
   
       controller: function () {
   
@@ -164,6 +164,20 @@ angular.module('test.hellogalaxy',[])
         //  this.toggleGreeting = function () {
         //      this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
          // }
+      }
+
+})
+
+
+.component('compTerribleFootballTeams', {
+
+    bindings:{ terribleTeamInfo:'<'},
+  
+      templateUrl: 'templates/football-terrible-teams.html',
+  
+      controller: function () {
+  
+        
       }
 
 })

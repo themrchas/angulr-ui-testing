@@ -1,8 +1,18 @@
-<h3>Football Information</h3>
+<div style="border: solid 2px gray">
 
-<h3>Leagues follow.....</h3>
-<div ui-view="conferences"></div>
+    <h3>Football Information in football-template.html - gray border</h3>
+
+    <h3>Conferences follow in football-template.html</h3>
+    <div ui-view="conferences"></div>
+
+    <h3>Teams follow in football-template.html</h3>
+    <div ui-view="teams"></div>
+
+    <div style="border: solid 2px purple">
+        <h3>Standard ui-view below in football-template.html</h3>
+        <ui-view></ui-view>
+    </div>
+
+</div>
 
 
-<h3>Teams follow......</h3>
-<div ui-view="teams"></div>

@@ -101,11 +101,19 @@ myApp.config(function($stateProvider) {
   }
 
 
-  var footballAbstract = {
+  var football = {
     name: 'football',
     abstract: true,
     url: '/football',
-    templateUrl: 'templates/football-template.html'
+    views :{
+     '' : {
+        templateUrl: 'templates/football-template.html'
+      },
+
+
+
+    }
+    
 
   }
 
@@ -113,20 +121,41 @@ myApp.config(function($stateProvider) {
 var footballInformation = {
 
     name: 'football.information',
-    url: '/information',
+    //url: '/information',
+  //  templateUrl: 'templates/football-information-template.html',
 
     views: {
 
-      conferences: 'compFootballLeagues',
-      teams: 'compFootballTeams'
+      'conferences@football': 'compFootballConferences',
+      'teams@football' : 'compFootballTeams'
     },
     resolve: {
-      leagueInfo: function (dataService) {
+      conferenceInfo: function (dataService) {
         return dataService.getFootballConferences();
       },
       teamInfo: function (dataService) {
-        return dataService.getFootballTeams();
+        return dataService.getNationalFootballTeams();
       }
+    }
+  }
+
+  var footballInformationData = {
+
+    name: 'football.information.data',
+    
+    views: {
+    
+     // 'ateams@football.information' : 'compFootballTeams'
+     '@football.information': 'compFootballTeams',
+     '@football' : 'compTerribleFootballTeams'
+    },
+    resolve: {
+     teamInfo: function (dataService) {
+        return dataService.getAmericanFootballTeams();
+      },
+      terribleTeamInfo: function (dataService) {
+        return dataService.getTerribleFootballTeams();
+      },
     }
 
   }
@@ -152,8 +181,9 @@ $stateProvider.state(myAbstract);
 $stateProvider.state(messagesAbstract);
 
 
-$stateProvider.state(footballAbstract);
+$stateProvider.state(football);
 $stateProvider.state(footballInformation);
+$stateProvider.state(footballInformationData);
 
 
 });

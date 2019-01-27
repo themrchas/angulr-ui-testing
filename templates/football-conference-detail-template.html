@@ -1,0 +1,22 @@
+<div style="border: solid 2px black">
+
+In football-conference-detail-template - black border
+
+<li ng-repeat="conference in $ctrl.conferenceInfo">
+        <!--    <a ui-sref="solarWParams({testName:planet})">{{planet}}</a> -->
+        {{conference}}
+        </li>
+
+
+     <!--   
+        <h3>American Conference</h3>
+        <div ui-view="afc-teams"></div>
+
+        <h3>National Conference</h3>
+        <div ui-view="nfc-teams"></div> -->
+
+         <div style="border: solid 2px orange">
+        <h3>Vanilla uivew below belonging to football-conference-detail-template - orange border</h3>
+        <ui-view></ui-view>
+         </div>
+</div>
