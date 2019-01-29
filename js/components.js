@@ -75,20 +75,32 @@ angular.module('test.hellogalaxy',[])
 })
 
 
-.component('compLeagues', {
+.component('compSoccer', {
 
-    bindings:{ leagueInfo:'<'},
+    bindings:{ leagues:'<'},
   
-      templateUrl: 'templates/league-detail-template.html',
+      templateUrl: 'templates/soccer-template-parent.html',
   
       controller: function () {
+        //  console.log('hello world');
+
+     //console.log('leagues are',leagues);
   
-        //  this.planets = ["mars","jupiter","mercury"];
-        //  this.greeting = 'hello';
+      
+      }
+
+})
+
+.component('compSoccerLeagueDetail', {
+
+    bindings:{ teams:'<'},
   
-        //  this.toggleGreeting = function () {
-        //      this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
-         // }
+      templateUrl: 'templates/soccer-league-template.html',
+  
+      controller: function () {
+
+      //  console.log('leagueInfo is',leagueInfo);
+        
       }
 
 })

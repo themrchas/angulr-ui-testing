@@ -1,0 +1,15 @@
+<div>
+    <!-- astronautInfo is {{$ctrl.astronautInfo}} -->
+    <h3>soccer-template-parent.html below:</h3>
+  <!--  <h3>leagues are {{$ctrl.leagues}}</h3> -->
+    <ul>
+        <li ng-repeat="league in $ctrl.leagues">
+            <a ui-sref-active="active" ui-sref="soccer.league({id: league.id})">{{league.name}}</a>
+        </li>
+    </ul>
+
+    <h3>Vanilla ui-view in red box below</h3>
+    <div style="border:2px red solid"> 
+    <ui-view></ui-view>
+   </div> 
+</div>

@@ -159,6 +159,127 @@ function getTerribleFootballTeams() {
         return deferred.promise;
 }
 
+function getBundesligaTeams() {
+
+    var bundesligaTeams = ["Bayer Leverkusen", "VfB Stuttgart", "SC Freiburg"];
+
+   /*     var deferred = $q.defer();
+
+        var intervalID = setInterval(function () {
+
+            clearInterval(intervalID);
+            deferred.resolve(bundeligaTeams);
+
+        }, 3000)
+
+        return deferred.promise; */
+
+        return bundesligaTeams;
+}
+
+function getPremiershipTeams() {
+
+    var premiershipaTeams = ["Chelsea", "Arsenal", "Burnley"];
+
+    /*    var deferred = $q.defer();
+
+        var intervalID = setInterval(function () {
+
+            clearInterval(intervalID);
+            deferred.resolve(premiershipTeams);
+
+        }, 3000)
+
+        return deferred.promise; */
+
+        return premiershipaTeams;
+}
+
+function getBundeligaInfo() {
+
+    var stadiumData = [{ name: "Bayer Leverkusen", stadium: "BayArena", city:"Leverkusen", id: 1 },
+    { name: "VfB Stuttgart", stadium: "Mercedes Benz Arena", city:"Stuttgart", id: 2 },
+    { name: "SC Freiburg", stadium: "Schwarzwalkd-Stadion", city: "Freiburg", id: 3 }
+    ];
+
+    var deferred = $q.defer();
+
+    var intervalID = setInterval(function () {
+
+        clearInterval(intervalID);
+        deferred.resolve(stadiumData);
+
+    }, 1000)
+
+     return deferred.promise; 
+
+     
+}
+
+
+function getPremieshipInfo() {
+
+    var stadiumData = [{ name: "Chelsea", stadium: "Stamford Bridge", city:"London", id: 1 },
+    { name: "Arsenal", stadium: "Emerites Stadium", city:"Londob", id: 2 },
+    { name: "Burnley", stadium: "Turf Moor", city: "Burnley", id: 3 }
+    ];
+
+    var deferred = $q.defer();
+
+    var intervalID = setInterval(function () {
+
+        clearInterval(intervalID);
+        deferred.resolve(stadiumData);
+
+    }, 3000)
+
+    return deferred.promise;
+}
+
+function getSoccerLeagues() {
+
+    var leagues = [{ name: "Bundesliga" , id: 1 },
+    { name: "Premier League", id: 2 }    
+    ];
+
+    var deferred = $q.defer();
+
+    var intervalID = setInterval(function () {
+
+        clearInterval(intervalID);
+        deferred.resolve(leagues);
+
+    }, 2000)
+
+    return deferred.promise;
+}
+
+
+function getSoccerLeagueTeams(leagueId) {
+
+    var teamInfo;
+    
+    if (leagueId == 1)
+        teamInfo = getBundesligaTeams();
+    else 
+        teamInfo = getPremiershipTeams();
+
+        console.log('teamInfo is', teamInfo);
+
+    var deferred = $q.defer();
+
+    var intervalID = setInterval(function () {
+
+        clearInterval(intervalID);
+        deferred.resolve(teamInfo);
+
+    }, 2000)
+
+    return deferred.promise;
+}
+
+
+
 
 
 return {
@@ -172,7 +293,14 @@ return {
     getFootballConferences:getFootballConferences,
     getNationalFootballTeams:getNationalFootballTeams,
     getAmericanFootballTeams:getAmericanFootballTeams,
-    getTerribleFootballTeams:getTerribleFootballTeams
+    getTerribleFootballTeams:getTerribleFootballTeams,
+  //  getBundesligaTeams:getBundesligaTeams,
+   // getPremiershipTeams:getPremiershipTeams,
+    getBundeligaInfo:getBundeligaInfo,
+    getPremieshipInfo:getPremieshipInfo,
+    getSoccerLeagues:getSoccerLeagues,
+    getSoccerLeagueTeams:getSoccerLeagueTeams
+
 
 
 }

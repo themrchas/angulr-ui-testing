@@ -33,7 +33,8 @@ myApp.config(function($stateProvider) {
 //Shows how to pass parameters
   var solarWithParams = {
     name: 'solarparams',
-    url: '/solarparams/{testName}',
+   url: '/solarparams/{testName}',
+  //url: '/solar/{testName}',
     component: 'solarparams',
    resolve: {
       planet: function($transition$) {
