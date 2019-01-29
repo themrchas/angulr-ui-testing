@@ -106,6 +106,21 @@ angular.module('test.hellogalaxy',[])
 })
 
 
+.component('compSoccerTeamDetail', {
+
+    bindings:{ team:'<'},
+  
+      templateUrl: 'templates/soccer-league-template.html',
+  
+      controller: function () {
+
+      //  console.log('leagueInfo is',leagueInfo);
+        
+      }
+
+})
+
+
 .component('compTeams', {
 
     bindings:{ teamInfo:'<'},
