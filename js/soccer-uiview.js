@@ -18,26 +18,26 @@ angular.module('helloworld')
       //Child state of 'soccer' state
       var soccerLeaguesState = {
         name: 'soccer.league',
-        url: '/league/{id}',
+        url: '/league/{leagueId}',
         component: 'compSoccerLeagueDetail',
        resolve: {
           teams: function(dataService,$stateParams) {
-              console.log('$stateParams, $stateParams.id',$stateParams, $stateParams.id);
-              return dataService.getSoccerLeagueTeams($stateParams.id);
+              console.log('$stateParams, $stateParams.id',$stateParams, $stateParams.leagueId);
+              return dataService.getSoccerLeagueTeams($stateParams.leagueId);
           }
         } 
       }
 
 
-       //Child state of 'soccer' state
+       //Grandchild state of 'soccer' state
        var soccerTeamState = {
         name: 'soccer.league.team',
-        url: '/team/{name}',
+        url: '/team/{teamId}',
         component: 'compSoccerTeamDetail',
        resolve: {
-          teams: function(dataService,$stateParams) {
-              console.log($stateParams, $stateParams);
-              return dataService.getSoccerLeagueTeams($stateParams.name);
+          team: function(dataService,$stateParams) {
+              console.log($stateParams);
+              return dataService.getSoccerTeamInfo($stateParams.leagueId,$stateParams.teamId);
           }
         } 
       }

@@ -4,7 +4,7 @@
   <!--  <h3>leagues are {{$ctrl.leagues}}</h3> -->
     <ul>
         <li ng-repeat="league in $ctrl.leagues">
-            <a ui-sref-active="active" ui-sref="soccer.league({id: league.id})">{{league.name}}</a>
+            <a ui-sref-active="active" ui-sref="soccer.league({leagueId: league.id})">{{league.name}}</a>
         </li>
     </ul>
 

@@ -161,7 +161,7 @@ function getTerribleFootballTeams() {
 
 function getBundesligaTeams() {
 
-    var bundesligaTeams = ["Bayer Leverkusen", "VfB Stuttgart", "SC Freiburg"];
+    var bundesligaTeams = [{name: "Bayer Leverkusen", id:1}, {name: "VfB Stuttgart", id:2}, {name:"SC Freiburg",id:3}];
 
    /*     var deferred = $q.defer();
 
@@ -192,12 +192,12 @@ function getPremiershipTeams() {
 
         return deferred.promise; */
 
-        return premiershipaTeams;
+        return premiershipTeams;
 }
 
-function getBundeligaInfo() {
+function getBundesligaInfo() {
 
-    var stadiumData = [{ name: "Bayer Leverkusen", stadium: "BayArena", city:"Leverkusen", id: 1 },
+    var teamInfo = [{ name: "Bayer Leverkusen", stadium: "BayArena", city:"Leverkusen", id: 1 },
     { name: "VfB Stuttgart", stadium: "Mercedes Benz Arena", city:"Stuttgart", id: 2 },
     { name: "SC Freiburg", stadium: "Schwarzwalkd-Stadion", city: "Freiburg", id: 3 }
     ];
@@ -207,9 +207,9 @@ function getBundeligaInfo() {
     var intervalID = setInterval(function () {
 
         clearInterval(intervalID);
-        deferred.resolve(stadiumData);
+        deferred.resolve(teamInfo);
 
-    }, 1000)
+    }, 2000)
 
      return deferred.promise; 
 
@@ -296,8 +296,8 @@ return {
     getTerribleFootballTeams:getTerribleFootballTeams,
   //  getBundesligaTeams:getBundesligaTeams,
    // getPremiershipTeams:getPremiershipTeams,
-    getBundeligaInfo:getBundeligaInfo,
-    getPremieshipInfo:getPremieshipInfo,
+    getBundesligaInfo:getBundesligaInfo,
+    getPremiershipInfo:getPremiershipInfo,
     getSoccerLeagues:getSoccerLeagues,
     getSoccerLeagueTeams:getSoccerLeagueTeams
 

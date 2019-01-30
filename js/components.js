@@ -110,7 +110,7 @@ angular.module('test.hellogalaxy',[])
 
     bindings:{ team:'<'},
   
-      templateUrl: 'templates/soccer-league-template.html',
+      templateUrl: 'templates/soccer-template-team.html',
   
       controller: function () {
 

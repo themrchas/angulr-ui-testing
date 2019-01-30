@@ -1,10 +1,10 @@
 <div>
     <!-- astronautInfo is {{$ctrl.astronautInfo}} -->
     <h3>soccer-league-template.html below::</h3>
-   <h3>teams are {{$ctrl.teams}}</h3>  
+  <!-- <h3>teams are {{$ctrl.teams}}</h3>  -->
     <ul>
         <li ng-repeat="team in $ctrl.teams">
-            <a ui-sref-active="active" ui-sref="soccer.league.team({name: team})">{{team}}</a>
+            <a ui-sref-active="active" ui-sref="soccer.league.team({teamId: team.id})">{{team.name}}</a>
         </li>
     </ul>
 
