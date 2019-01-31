@@ -161,7 +161,7 @@ function getTerribleFootballTeams() {
 
 function getBundesligaTeams() {
 
-    var bundesligaTeams = [{name: "Bayer Leverkusen", id:1}, {name: "VfB Stuttgart", id:2}, {name:"SC Freiburg",id:3}];
+    var bundesligaTeams = [{name: "Bayer Leverkusen", id:0}, {name: "VfB Stuttgart", id:1}, {name:"SC Freiburg",id:2}];
 
    /*     var deferred = $q.defer();
 
@@ -195,14 +195,14 @@ function getPremiershipTeams() {
         return premiershipTeams;
 }
 
-function getBundesligaInfo() {
+function getBundesligaTeamInfo() {
 
-    var teamInfo = [{ name: "Bayer Leverkusen", stadium: "BayArena", city:"Leverkusen", id: 1 },
-    { name: "VfB Stuttgart", stadium: "Mercedes Benz Arena", city:"Stuttgart", id: 2 },
-    { name: "SC Freiburg", stadium: "Schwarzwalkd-Stadion", city: "Freiburg", id: 3 }
+    var teamInfo = [{ name: "Bayer Leverkusen", stadium: "BayArena", city:"Leverkusen", id: 0 },
+    { name: "VfB Stuttgart", stadium: "Mercedes Benz Arena", city:"Stuttgart", id: 1 },
+    { name: "SC Freiburg", stadium: "Schwarzwalkd-Stadion", city: "Freiburg", id: 2 }
     ];
 
-    var deferred = $q.defer();
+ /*   var deferred = $q.defer();
 
     var intervalID = setInterval(function () {
 
@@ -211,20 +211,22 @@ function getBundesligaInfo() {
 
     }, 2000)
 
-     return deferred.promise; 
+     return deferred.promise;  */
+
+     return teamInfo;
 
      
 }
 
 
-function getPremieshipInfo() {
+function getPremiershipTeamInfo() {
 
-    var stadiumData = [{ name: "Chelsea", stadium: "Stamford Bridge", city:"London", id: 1 },
-    { name: "Arsenal", stadium: "Emerites Stadium", city:"Londob", id: 2 },
-    { name: "Burnley", stadium: "Turf Moor", city: "Burnley", id: 3 }
+    var teamInfo = [{ name: "Chelsea", stadium: "Stamford Bridge", city:"London", id: 0 },
+    { name: "Arsenal", stadium: "Emerites Stadium", city:"Londob", id: 1 },
+    { name: "Burnley", stadium: "Turf Moor", city: "Burnley", id: 2 }
     ];
 
-    var deferred = $q.defer();
+  /*  var deferred = $q.defer();
 
     var intervalID = setInterval(function () {
 
@@ -233,13 +235,15 @@ function getPremieshipInfo() {
 
     }, 3000)
 
-    return deferred.promise;
+    return deferred.promise; */
+
+    return teamInfo;
 }
 
 function getSoccerLeagues() {
 
-    var leagues = [{ name: "Bundesliga" , id: 1 },
-    { name: "Premier League", id: 2 }    
+    var leagues = [{ name: "Bundesliga" , id: 0 },
+    { name: "Premier League", id: 1 }    
     ];
 
     var deferred = $q.defer();
@@ -259,9 +263,9 @@ function getSoccerLeagueTeams(leagueId) {
 
     var teamInfo;
     
-    if (leagueId == 1)
+    if (leagueId == 0)
         teamInfo = getBundesligaTeams();
-    else 
+    else if (leagueId == 1)
         teamInfo = getPremiershipTeams();
 
         console.log('teamInfo is', teamInfo);
@@ -277,6 +281,35 @@ function getSoccerLeagueTeams(leagueId) {
 
     return deferred.promise;
 }
+
+function getSoccerTeamInfo(leagueId,teamId) {
+
+    var consolidatedTeamInfo;
+
+    if (leagueId == 0)
+        consolidatedTeamInfo = getBundesligaTeamInfo();
+
+    else if (leagueId == 1)
+        consolidatedTeamInfo = getPremiershipTeamInfo();
+
+        console.log('consolidatedTeamInfo is',consolidatedTeamInfo );
+
+        var deferred = $q.defer();
+
+        var intervalID = setInterval(function () {
+
+            clearInterval(intervalID);
+            console.log('resolving', consolidatedTeamInfo[teamId]);
+            deferred.resolve(consolidatedTeamInfo[teamId]);
+    
+        }, 2000)
+
+        return deferred.promise;
+}
+
+
+
+
 
 
 
@@ -296,10 +329,11 @@ return {
     getTerribleFootballTeams:getTerribleFootballTeams,
   //  getBundesligaTeams:getBundesligaTeams,
    // getPremiershipTeams:getPremiershipTeams,
-    getBundesligaInfo:getBundesligaInfo,
-    getPremiershipInfo:getPremiershipInfo,
+ //   getBundesligaInfo:getBundesligaInfo,
+  //  getPremiershipInfo:getPremiershipInfo,
     getSoccerLeagues:getSoccerLeagues,
-    getSoccerLeagueTeams:getSoccerLeagueTeams
+    getSoccerLeagueTeams:getSoccerLeagueTeams,
+    getSoccerTeamInfo:getSoccerTeamInfo
 
 
 
