@@ -21,6 +21,7 @@ myApp.config(function($stateProvider) {
     component: 'solarSystem',
     resolve: {
       planets: function(dataService) {
+        console.log('transition is',$transition$);
         return dataService.getPlanets();
       },
       rockyPlanets: function(dataService) {

@@ -179,7 +179,8 @@ function getBundesligaTeams() {
 
 function getPremiershipTeams() {
 
-    var premiershipaTeams = ["Chelsea", "Arsenal", "Burnley"];
+    var premiershipTeams = [{name: "Chelsea", id:0}, {name: "Arsenal", id:1}, {name:"Burnley",id:2}];
+
 
     /*    var deferred = $q.defer();
 
@@ -222,7 +223,7 @@ function getBundesligaTeamInfo() {
 function getPremiershipTeamInfo() {
 
     var teamInfo = [{ name: "Chelsea", stadium: "Stamford Bridge", city:"London", id: 0 },
-    { name: "Arsenal", stadium: "Emerites Stadium", city:"Londob", id: 1 },
+    { name: "Arsenal", stadium: "Emerites Stadium", city:"London", id: 1 },
     { name: "Burnley", stadium: "Turf Moor", city: "Burnley", id: 2 }
     ];
 

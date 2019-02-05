@@ -8,8 +8,26 @@
         </li>
     </ul>
 
-    <h3>Vanilla ui-view in red box below</h3>
-    <div style="border:2px red solid"> 
-    <ui-view></ui-view>
-   </div> 
+    <!-- This shows child and grandchild views next to each other-->
+    <div>Vanilla ui-view in red box below</div>
+    <div>
+        <div style="border:2px red solid; display:inline-block; height:200px; width:400px"> 
+        <ui-view></ui-view>
+        </div> 
+        <div style="border:2px aqua solid; display:inline-block; height:200px; width:400px"> 
+           <ui-view name="teamDetails"></ui-view>
+         </div> 
+    </div> 
+
+    <!-- This shows one view that will be occupied by child and then grandchild-->
+    <!--<div>Vanilla ui-view in acqua box below</div>
+    <div>
+       
+        <div style="border:2px aqua solid; display:inline-block; height:200px; width:400px"> 
+           <ui-view name="commonView"></ui-view>
+         </div> 
+    </div> -->
+
+
+
 </div>
